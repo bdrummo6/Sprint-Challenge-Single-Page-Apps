@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export default function SearchForm(props) {
 
    const Button = styled.button`
-     margin-left: 5px;
+	   margin-left: 5px;
    `;
 
    const [searchResults, setSearchResults] = useState([]);
@@ -22,6 +22,7 @@ export default function SearchForm(props) {
       });
 
       props.search(query);
+
    };
 
   return (
@@ -32,6 +33,7 @@ export default function SearchForm(props) {
               id='searchInput'
               name='search'
               maxLength='30'
+			  placeholder='Enter character name'
               onChange={changeHandler}
            />
            <Button type='submit'>Search</Button>
