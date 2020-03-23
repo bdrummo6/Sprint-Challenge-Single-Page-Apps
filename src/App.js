@@ -1,10 +1,9 @@
-import React from "react";
+import React from 'react';
 import { Route } from 'react-router-dom';
 
 import Header from "./components/Header";
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
-import SearchForm from "./components/SearchForm";
 
 import styled from "styled-components";
 
@@ -14,7 +13,6 @@ export default function App() {
      display: flex;
      flex-direction: column;
    `;
-
 
   return (
     <App>
