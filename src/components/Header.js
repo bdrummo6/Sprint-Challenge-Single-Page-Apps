@@ -8,15 +8,21 @@ export default function Header() {
     display: flex;
     justify-content: space-evenly;
     width: 30%;
-    margin: 10px 32% 10px 32%;
+    margin: 10px 35% 10px 35%;
+  `;
+
+   const Btn = styled.button`
+    font-size: 1.1rem;
+    background: white;
+    text-decoration: none;
   `;
 
    return (
     <header className="ui centered">
       <h1 className="ui center">Rick &amp; Morty Fan Page</h1>
       <Buttons>
-         <button><Link to='/'>Home</Link></button>
-         <button><Link to='/characters'>Characters</Link></button>
+         <Btn><Link to='/'>Home</Link></Btn>
+         <Btn><Link to='/characters'>Characters</Link></Btn>
       </Buttons>
     </header>
   );

@@ -1,7 +1,38 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
+import styled from 'styled-components';
+
 export default function CharacterList(props) {
+
+   const Characters = styled.div`
+     width: 60%;
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     align-items: center;
+     margin: 10px 20% 10px 20%;
+     
+   `;
+
+   const Character = styled.div`
+     width: 50%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin: 5px 25% 5px 25%;
+     background: cadetblue;
+     color: white;
+     border: 2px solid cadetblue;
+     border-radius: 2%;
+     
+   `;
+
+   const Atts = styled.span`
+     font-weight: bold;
+   `;
+
+
    const [characters, setCharacters] = useState([]);
 
    useEffect(() => {
@@ -17,21 +48,19 @@ export default function CharacterList(props) {
 
    return (
       <section className="character-list">
-         <div className='characters'>
+         <Characters>
             <h2>List of Characters</h2>
             {characters.map(character => {
                return (
-                  <div className='character' key={character.id}>
+                  <Character key={character.id}>
                      <h3>{character.name}</h3>
-                     <div>
-                        <p>Status: {character.status}</p>
-                        <p>Gender: {character.gender}</p>
-                        <p>Species: {character.species}</p>
-                     </div>
-                  </div>
+                     <p>Status: <Atts>{character.status}</Atts></p>
+                     <p>Gender: <Atts>{character.gender}</Atts></p>
+                     <p>Species: <Atts>{character.species}</Atts></p>
+                  </Character>
                )
             })}
-         </div>
+         </Characters>
       </section>
    );
 }
