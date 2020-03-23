@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
 import styled from 'styled-components';
+import SearchForm from "./SearchForm";
 
 export default function CharacterList(props) {
 
@@ -32,7 +33,6 @@ export default function CharacterList(props) {
      font-weight: bold;
    `;
 
-
    const [characters, setCharacters] = useState([]);
 
    useEffect(() => {
@@ -50,6 +50,7 @@ export default function CharacterList(props) {
       <section className="character-list">
          <Characters>
             <h2>List of Characters</h2>
+            <SearchForm {...props} characters={characters} setCharacter={setCharacters} />
             {characters.map(character => {
                return (
                   <Character key={character.id}>
