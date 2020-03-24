@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import SearchForm from './SearchForm';
 import CharacterCard from "./CharacterCard";
 
-export default function CharacterList(props) {
+const CharacterList = props => {
    const List = styled.section`
       width: 100%;
       display: flex;
@@ -58,6 +58,8 @@ export default function CharacterList(props) {
             </List>
          </Characters>
       </List>
-   );
-}
+   )
+};
+
+export default CharacterList;
 

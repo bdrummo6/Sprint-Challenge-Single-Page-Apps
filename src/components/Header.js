@@ -1,30 +1,39 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-
-export default function Header() {
-  const Buttons = styled.div`
+const Header = () => {
+   const Buttons = styled.div`
     display: flex;
     justify-content: space-evenly;
-    width: 30%;
-    margin: 10px 35% 10px 35%;
+    width: 20%;
+    margin: 10px 40% 10px 40%;
   `;
 
    const Btn = styled.button`
-    font-size: 1.1rem;
-    background: white;
-    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px;
+    background: cadetblue;
+    border: 1px solid gray;
+    border-radius: 10%;
   `;
 
+   const linkStyle = {
+    textDecoration: 'none',
+    color: 'white'
+   }
+
    return (
-    <header className="ui centered">
-      <h1 className="ui center">Rick &amp; Morty Fan Page</h1>
-      <Buttons>
-         <Btn><Link to='/'>Home</Link></Btn>
-         <Btn><Link to='/characters'>Characters</Link></Btn>
-      </Buttons>
-    </header>
-  );
-}
+      <header className="ui centered">
+         <h1 className="ui center">Rick &amp; Morty Fan Page</h1>
+         <Buttons>
+            <Btn><Link to='/' style={linkStyle}>Home</Link></Btn>
+            <Btn><Link to='/characters' style={linkStyle}>Characters</Link></Btn>
+         </Buttons>
+      </header>
+   )
+};
+
+export default Header;

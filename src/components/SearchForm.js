@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 
 import styled from 'styled-components';
 
-export default function SearchForm(props) {
-
+const SearchForm = props => {
    const Button = styled.button`
 	   margin-left: 5px;
    `;
@@ -25,19 +24,21 @@ export default function SearchForm(props) {
 
    };
 
-  return (
-     <section className="search-form">
-        <form onSubmit={submitHandler}>
-           <input
-              type='text'
-              id='searchInput'
-              name='search'
-              maxLength='30'
-			  placeholder='Enter character name'
-              onChange={changeHandler}
-           />
-           <Button type='submit'>Search</Button>
-        </form>
-    </section>
-  );
-}
+   return (
+      <section className="search-form">
+         <form onSubmit={submitHandler}>
+            <input
+               type='text'
+               id='searchInput'
+               name='search'
+               maxLength='30'
+               placeholder='Enter character name'
+               onChange={changeHandler}
+            />
+            <Button type='submit'>Search</Button>
+         </form>
+      </section>
+   )
+};
+
+export default SearchForm;

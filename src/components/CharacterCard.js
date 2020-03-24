@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-export default function CharacterCard(props) {
+const CharacterCard = props => {
 	const Character = styled.div`
      width: 50%;
      display: flex;
@@ -54,5 +54,7 @@ export default function CharacterCard(props) {
 				</Ul>
 			</Atts>
 		</Character>
-	);
-}
+	)
+};
+
+export default CharacterCard;
